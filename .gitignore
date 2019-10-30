@@ -1,5 +1,5 @@
 .DS_Store
-node_modules/*
+node_modules/
 o-ri
 
 
@@ -23,12 +23,3 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
-
-# Except eslint
-!node_modules/.bin/
-!node_modules/eslint/
-!node_modules/@vue/
-node_modules/@vue/babel-helper-vue-jsx-merge-props
-node_modules/@vue/component-compiler-utils
-node_modules/@vue/cli-shared-utils
-node_modules/@vue/preload-webpack-plugin

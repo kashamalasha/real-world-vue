@@ -3,8 +3,6 @@ node_js:
 - stable
 install:
   - npm install
-script:
-  - firebase deploy --token $FIREBASE_TOKEN_RAW
 deploy:
   provider: firebase
   token:

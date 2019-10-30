@@ -3,6 +3,9 @@ node_modules
 o-ri
 /dist
 
+# firebase cache files
+.firebase/hosting*
+
 # local env files
 .env.local
 .env.*.local
@@ -20,3 +23,7 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+
+# Except
+!node_modules/.bin/eslint
+!node_modules/eslint

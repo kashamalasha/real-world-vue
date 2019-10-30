@@ -5,4 +5,5 @@ before_install:
   - cd functions 
   - ls node_modules/.bin
   - npm install
-  - npm run lint
+  - cd ..
+  - npm --prefix "$RESOURCE_FOLDER" run lint

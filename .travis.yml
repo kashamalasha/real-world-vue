@@ -1,8 +1,8 @@
 language: node_js
 node_js:
 - stable
-install:
-  - npm install
+before_deploy:
+  - cd functions && npm install
 deploy:
   provider: firebase
   token:

@@ -4,4 +4,4 @@ node_js:
 deploy:
   provider: firebase
   token:
-    secure: $FIREBASE_TOKEN
+    secure: $FIREBASE_TOKEN_RAW

@@ -1,6 +1,8 @@
 language: node_js
 node_js:
 - stable
+install:
+  - npm install eslint --save-dev
 deploy:
   provider: firebase
   token:

@@ -8,6 +8,5 @@ deploy:
   provider: firebase
     token:
       secure: $FIREBASE_TOKEN
-    project: "real-world-vue"
     message: "deploy that shit"
 

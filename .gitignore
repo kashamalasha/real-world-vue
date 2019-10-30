@@ -1,5 +1,5 @@
 .DS_Store
-node_modules
+node_modules/*
 o-ri
 /dist
 
@@ -24,6 +24,5 @@ yarn-error.log*
 *.sln
 *.sw?
 
-# Except
-!/.bin/eslint
-!eslint
+# Except eslint
+!node_modules/.bin/

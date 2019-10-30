@@ -1,9 +1,8 @@
 language: node_js
 node_js:
 - stable
-before_install:
-  - cd functions 
-  - ls node_modules/.bin
-  - npm install
-  - cd ..
-  - npm --prefix "$RESOURCE_FOLDER" run lint
+deploy:
+  provider: firebase
+  only: hosting
+  token:
+    secret: $FIREBASE_TOKEN_RAW

@@ -3,15 +3,6 @@ node_js:
 - stable
 before_deploy:
   - cd functions 
-  - pwd
+  - ls node_modules/.bin
   - npm install
-  - cd ..
-  - pwd
-  - npm install
-  - npm install eslint --save-dev
-  - npm install lint
   - npm run lint
-deploy:
-  provider: firebase
-  token:
-    secure: $FIREBASE_TOKEN_RAW

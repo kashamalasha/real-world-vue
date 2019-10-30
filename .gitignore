@@ -26,3 +26,4 @@ yarn-error.log*
 
 # Except eslint
 !node_modules/.bin/
+!node_modules/eslint/

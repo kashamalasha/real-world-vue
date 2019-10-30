@@ -3,10 +3,7 @@ node_js:
 - stable
 - '6'
 - '4'
-before_deploy: "echo 'let's do it!'"
 deploy:
   provider: firebase
     token:
       secure: $FIREBASE_TOKEN
-    message: "deploy that shit"
-

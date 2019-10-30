@@ -1,7 +1,7 @@
 language: node_js
 node_js:
 - stable
-before_deploy:
+before_install:
   - cd functions 
   - ls node_modules/.bin
   - npm install

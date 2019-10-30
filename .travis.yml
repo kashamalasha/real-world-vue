@@ -3,6 +3,11 @@ node_js:
 - stable
 deploy:
   provider: firebase
-  only: hosting
+  only: 
+    - hosting
+  on:
+    branches:
+      only:
+        - master
   token:
     secret: $FIREBASE_TOKEN_RAW

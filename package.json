@@ -5,7 +5,10 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "report-coverage": "nyc report --reporter=lcov > coverage.lcov && codecov",
+    "standard": "standard index.js",
+    "test": "nyc ./node_modules/.bin/ava -v"
   },
   "dependencies": {
     "core-js": "^3.3.2",
@@ -24,10 +27,17 @@
     "eslint": "^5.16.0",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-vue": "^5.0.0",
+    "launch-editor-middleware": "^2.2.1",
     "node-sass": "^4.12.0",
     "prettier": "^1.18.2",
     "sass-loader": "^8.0.0",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "ava": "^0.16.0",
+    "co-exec": "^1.0",
+    "codecov": "^1.0.1",
+    "ghooks": "^1.2.4",
+    "nyc": "^10.0.0",
+    "standard": "^8.4.0"
   },
   "eslintConfig": {
     "root": true,
@@ -51,5 +61,10 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm run standard"
+    }
+  }
 }

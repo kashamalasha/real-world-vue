@@ -1,6 +1,10 @@
 .DS_Store
-node_modules
-/dist
+node_modules/
+o-ri
+
+
+# firebase cache files
+.firebase/hosting*
 
 # local env files
 .env.local

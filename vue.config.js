@@ -4,9 +4,8 @@ module.exports = {
   configureWebpack: {
     devServer: {
       before(app) {
-	app.use("/__open-in-editor", openInEditor("sublime"));
+        app.use("/__open-in-editor", openInEditor("sublime"));
       }
     }
   }
 };
-

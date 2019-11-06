@@ -1,6 +1,8 @@
-.DS_Store
-node_modules/
-o-ri
+.DS_Store/
+.firebase/
+node_modules
+o-ri/
+functions
 
 
 # firebase cache files

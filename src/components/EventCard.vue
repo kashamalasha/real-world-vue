@@ -4,7 +4,7 @@
     v-bind:to="{ name: 'event-show', params: { id: event.id } }"
   >
     <div class="event-card -shadow">
-      <span class="eyebrow">@{{ event.time }} on {{ event.date }}</span>
+      <span class="eyebrow">@{{ event.time }} on {{ eventDate }}</span>
       <h4 class="title">{{ event.title }}</h4>
       <BaseIcon name="users">
         {{ event.attendees ? event.attendees.length : 0 }}
@@ -14,9 +14,16 @@
 </template>
 
 <script>
+import moment from "moment";
+
 export default {
   props: {
     event: Object
+  },
+  computed: {
+    eventDate() {
+      return moment(this.event.date).format("L");
+    }
   }
 };
 </script>

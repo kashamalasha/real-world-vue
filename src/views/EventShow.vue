@@ -1,26 +1,77 @@
 <template>
-  <h1>Event showing #{{ id }}</h1>
-
+  <div>
+    <div class="event-header">
+      <span class="eyebrow">@{{ event.time }} on {{ eventDate }}</span>
+      <h1 class="title">{{ event.title }}</h1>
+      <h5>Organized by {{ event.organizer }}</h5>
+      <h5>Category: {{ event.category }}</h5>
+    </div>
+    <BaseIcon name="map"><h2>Location</h2></BaseIcon>
+    <address>{{ event.location }}</address>
+    <h2>Event details</h2>
+    <p>{{ event.description }}</p>
+    <h2>
+      Attendees
+      <span class="badge -fill-gradient">
+        {{ event.attendees ? event.attendees.length : 0 }}
+      </span>
+    </h2>
+    <ul class="list-group">
+      <li
+        class="list-group__list-item"
+        v-for="(attendee, index) in event.attendees"
+        :key="index"
+      >
+        <b>{{ attendee.name }}</b>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
 import EventService from "@/services/EventService.js";
+import moment from "moment";
 
 export default {
   props: ["id"],
+  computed: {
+    eventDate() {
+      return moment(this.event.date).format("L");
+    }
+  },
   data() {
     return {
-        event: {}
-    }
+      event: {}
+    };
   },
   created() {
     EventService.getEvent(this.id)
       .then(response => {
-        this.event = response.data
+        this.event = response.data;
       })
       .catch(error => {
-        console.log("Error: " + error.response)
-      })
+        console.log(error);
+      });
   }
 };
 </script>
+<style scoped>
+.location {
+  margin-bottom: 0;
+}
+.location > .icon {
+  margin-left: 10px;
+}
+.event-header__title {
+  margin: 0;
+}
+.list-group {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.list-group__list-item {
+  padding: 1em 0;
+  border-bottom: solid 1px #e5e5e5;
+}
+</style>

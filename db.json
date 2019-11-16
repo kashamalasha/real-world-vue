@@ -16,11 +16,11 @@
       "attendees": [
         {
           "name": "Dima",
-          "address": "Moscow"
+          "index": 1
         },
         {
           "name": "Katya",
-          "address": "Moscow"
+          "index": 2
         }
       ]
     },
